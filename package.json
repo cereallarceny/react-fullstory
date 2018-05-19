@@ -1,0 +1,28 @@
+{
+  "name": "react-fullstory",
+  "version": "1.0.0",
+  "description": "A component to initialize Fullstory in your application",
+  "main": "build/index.js",
+  "dependencies": {
+    "prop-types": "^15.6.1"
+  },
+  "scripts": {
+    "build": "babel src -d build",
+    "prepublishOnly": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cereallarceny/react-fullstory.git"
+  },
+  "author": "Patrick Cason <me@patrickcason.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cereallarceny/react-fullstory/issues"
+  },
+  "homepage": "https://github.com/cereallarceny/react-fullstory#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1"
+  }
+}
