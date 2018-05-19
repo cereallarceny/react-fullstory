@@ -7,7 +7,7 @@ const canUseDOM = !!(
   window.document.createElement
 );
 
-const getWindowFullStory = () => window[window['_fs_namespace']];
+export const getWindowFullStory = () => window[window['_fs_namespace']];
 
 export const FullStoryAPI = (fn, ...args) => {
   if (canUseDOM && getWindowFullStory()) {
