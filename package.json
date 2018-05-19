@@ -1,6 +1,6 @@
 {
   "name": "react-fullstory",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A component to initialize Fullstory in your application",
   "main": "build/index.js",
   "dependencies": {},
