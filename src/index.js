@@ -11,7 +11,7 @@ export const getWindowFullStory = () => window[window['_fs_namespace']];
 
 export const FullStoryAPI = (fn, ...args) => {
   if (canUseDOM && getWindowFullStory()) {
-    getWindowFullStory().apply(fn, args);
+    getWindowFullStory()[fn].apply(null, args);
   } else {
     console.warn('FullStory not initialized yet');
   }
