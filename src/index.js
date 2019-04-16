@@ -76,7 +76,7 @@ export default class FullStory extends Component {
           g(o, v);
         };
         g.clearUserCookie = function() {};
-      })(window,document,window['_fs_namespace'],'script','user');
+      })(window, document, window['_fs_namespace'], 'script', 'user');
     }
   }
 
