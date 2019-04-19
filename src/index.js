@@ -33,29 +33,32 @@ export default class FullStory extends Component {
       window['_fs_org'] = org;
       window['_fs_namespace'] = namespace || 'FS';
 
-      (function(w, d, ns, t, l, o, g, y) {
-        if (ns in w) {
-          if (w.console && w.console.log) {
-            w.console.log(
-              'FullStory namespace conflict. Please set window["_fs_namespace"]'
-            );
+      (function(m, n, e, t, l, o, g, y) {
+        if (e in m) {
+          if (m.console && m.console.log) {
+            m.console.log('FullStory namespace conflict. Please set window["_fs_namespace"].');
           }
           return;
         }
-        g = w[ns] = function(a, b) {
-          g.q ? g.q.push([a, b]) : g._api(a, b);
+        g = m[e] = function(a, b, s) {
+          g.q ? g.q.push([a, b, s]) : g._api(a, b, s);
         };
         g.q = [];
-        o = d.createElement(t);
+        o = n.createElement(t);
         o.async = 1;
         o.src = 'https://' + window['_fs_host'] + '/s/fs.js';
-        d.head.appendChild(o);
-        g.identify = function(i, v) {
-          g(l, { uid: i });
-          if (v) g(l, v);
+        n.head.appendChild(o);
+        y = n.getElementsByTagName(t)[0];
+        y.parentNode.insertBefore(o, y);
+        g.identify = function(i, v, s) {
+          g(l, { uid: i }, s);
+          if (v) g(l, v, s);
         };
-        g.setUserVars = function(v) {
-          g(l, v);
+        g.setUserVars = function(v, s) {
+          g(l, v, s);
+        };
+        g.event = function(i, v, s) {
+          g('event', { n: i , p: v }, s);
         };
         g.shutdown = function() {
           g('rec', !1);
