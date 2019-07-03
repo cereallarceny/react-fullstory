@@ -19,6 +19,11 @@
     "url": "https://github.com/cereallarceny/react-fullstory/issues"
   },
   "homepage": "https://github.com/cereallarceny/react-fullstory#readme",
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+  },
   "browserslist": "> 0.25%, not dead",
   "devDependencies": {
     "@babel/cli": "^7.4.3",
@@ -28,7 +33,10 @@
     "babel-jest": "^24.7.1",
     "enzyme": "^3.9.0",
     "enzyme-adapter-react-16": "^1.12.1",
+    "husky": "^3.0.0",
     "jest": "^24.7.1",
+    "prettier": "^1.18.2",
+    "pretty-quick": "^1.11.1",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",

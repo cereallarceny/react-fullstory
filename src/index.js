@@ -36,7 +36,9 @@ export default class FullStory extends Component {
       (function(m, n, e, t, l, o, g, y) {
         if (e in m) {
           if (m.console && m.console.log) {
-            m.console.log('FullStory namespace conflict. Please set window["_fs_namespace"].');
+            m.console.log(
+              'FullStory namespace conflict. Please set window["_fs_namespace"].'
+            );
           }
           return;
         }
@@ -46,8 +48,8 @@ export default class FullStory extends Component {
         g.q = [];
         o = n.createElement(t);
         o.async = 1;
+        o.crossOrigin = 'anonymous';
         o.src = 'https://' + window['_fs_host'] + '/s/fs.js';
-        n.head.appendChild(o);
         y = n.getElementsByTagName(t)[0];
         y.parentNode.insertBefore(o, y);
         g.identify = function(i, v, s) {
@@ -58,13 +60,16 @@ export default class FullStory extends Component {
           g(l, v, s);
         };
         g.event = function(i, v, s) {
-          g('event', { n: i , p: v }, s);
+          g('event', { n: i, p: v }, s);
         };
         g.shutdown = function() {
           g('rec', !1);
         };
         g.restart = function() {
           g('rec', !0);
+        };
+        g.log = function(a, b) {
+          g('log', [a, b]);
         };
         g.consent = function(a) {
           g('consent', !arguments.length || a);
