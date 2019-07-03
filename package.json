@@ -6,8 +6,9 @@
   "scripts": {
     "test": "jest --coverage",
     "test:watch": "jest --coverage --watch",
+    "release": "release-it",
     "build": "babel src -d build",
-    "prepublishOnly": "npm run test && npm run build"
+    "prepublishOnly": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -40,6 +41,7 @@
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-test-renderer": "^16.8.6"
+    "react-test-renderer": "^16.8.6",
+    "release-it": "^12.3.0"
   }
 }
