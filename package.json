@@ -1,0 +1,86 @@
+{
+  "name": "react-fullstory",
+  "version": "1.2.0",
+  "description": "A simple SSR-ready wrapper for FullStory in React",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.esm.js",
+  "browser": "dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "start": "yarn storybook:start",
+    "storybook:start": "start-storybook",
+    "storybook:build": "build-storybook -c .storybook",
+    "build": "rollup -c",
+    "prepare": "yarn build",
+    "test": "jest --coverage",
+    "test:watch": "jest --watch",
+    "version": "auto-changelog -p && git add CHANGELOG.md",
+    "release": "np",
+    "predeploy": "yarn storybook:build",
+    "deploy": "gh-pages -d storybook-static && rm -rf storybook-static"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mnsht/react-fullstory.git"
+  },
+  "keywords": [
+    "library",
+    "microlibrary",
+    "generate",
+    "generator",
+    "react",
+    "component",
+    "moonshot",
+    "mnsht"
+  ],
+  "author": "Moonshot <contact@mns.ht>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mnsht/react-fullstory/issues"
+  },
+  "homepage": "https://mnsht.github.io/react-fullstory/",
+  "browserslist": "> 0.25%, not dead",
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+  },
+  "jest": {
+    "coveragePathIgnorePatterns": [
+      "/node_modules/"
+    ]
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
+    "@babel/preset-react": "^7.0.0",
+    "@storybook/addon-knobs": "^5.1.9",
+    "@storybook/addon-storyshots": "^5.1.9",
+    "@storybook/react": "^5.1.9",
+    "auto-changelog": "^1.13.0",
+    "babel-jest": "^24.8.0",
+    "babel-loader": "^8.0.6",
+    "gh-pages": "^2.0.1",
+    "husky": "^3.0.0",
+    "jest": "^24.8.0",
+    "np": "^5.0.3",
+    "prettier": "^1.18.2",
+    "pretty-quick": "^1.11.1",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-test-renderer": "^16.8.6",
+    "rollup": "^1.16.4",
+    "rollup-plugin-babel": "^4.3.3",
+    "rollup-plugin-commonjs": "^10.0.1",
+    "rollup-plugin-filesize": "^6.1.1",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-peer-deps-external": "^2.2.0"
+  },
+  "dependencies": {},
+  "peerDependencies": {
+    "react": ">=16.0.0",
+    "react-dom": ">=16.0.0"
+  }
+}
