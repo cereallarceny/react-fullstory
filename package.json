@@ -1,6 +1,6 @@
 {
   "name": "react-fullstory",
-  "version": "1.2.1",
+  "version": "1.2.0",
   "description": "A simple SSR-ready wrapper for FullStory in React",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
@@ -14,7 +14,7 @@
     "storybook:build": "build-storybook -c .storybook",
     "build": "rollup -c",
     "prepare": "yarn build",
-    "test": "echo \"Error: no test specified\"",
+    "test": "jest --coverage",
     "test:watch": "jest --watch",
     "version": "auto-changelog -p && git add CHANGELOG.md",
     "release": "np",
