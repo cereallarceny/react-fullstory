@@ -14,7 +14,7 @@
     "storybook:build": "build-storybook -c .storybook",
     "build": "rollup -c",
     "prepare": "yarn build",
-    "test": "jest --coverage",
+    "test": "echo \"Error: no test specified\"",
     "test:watch": "jest --watch",
     "version": "auto-changelog -p && git add CHANGELOG.md",
     "release": "np",
