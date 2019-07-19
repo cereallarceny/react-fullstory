@@ -61,8 +61,9 @@ FullStoryAPI('setUserVars', {
 In order to get things running locally, you can use the following commands:
 
 1. `yarn install` - installs all dev dependencies
-2. `yarn storybook` - a storybook preview where you can put in your own `ORG_ID`
-3. _Optional:_ `yarn test:watch` - run this in a separate terminal window to live-reload your test suite on save
+2. Create a file named `.env` and place inside it the contents of `.env.sample`. Remember to change the value to your organization's ID!
+3. `yarn storybook` - a storybook preview where you can try out sample commands
+4. _Optional:_ `yarn test:watch` - run this in a separate terminal window to live-reload your test suite on save
 
 ### Building
 
