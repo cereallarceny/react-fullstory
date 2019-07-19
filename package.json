@@ -46,7 +46,9 @@
   },
   "jest": {
     "coveragePathIgnorePatterns": [
-      "/node_modules/"
+      "/node_modules/",
+      "<rootDir>/src/fullstory-script.js",
+      "<rootDir>/src/mock-fullstory-script.js"
     ]
   },
   "devDependencies": {

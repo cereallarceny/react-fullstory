@@ -1,5 +1,6 @@
 import React from 'react';
 import initFullStory from './fullstory-script';
+import initMockFullStory from './mock-fullstory-script';
 
 const canUseDOM = !!(
   typeof window !== 'undefined' &&
@@ -7,14 +8,17 @@ const canUseDOM = !!(
   window.document.createElement
 );
 
+const includeFullStory =
+  process.env.NODE_ENV !== 'test' ? initFullStory : initMockFullStory;
+
 export const getWindowFullStory = () => window[window['_fs_namespace']];
 
 export const FullStoryAPI = (fn, ...args) => {
   if (canUseDOM && getWindowFullStory()) {
-    getWindowFullStory()[fn].apply(null, args);
-  } else {
-    console.warn('FullStory not initialized yet');
+    return getWindowFullStory()[fn].apply(null, args);
   }
+
+  return false;
 };
 
 export default class FullStory extends React.Component {
@@ -33,7 +37,7 @@ export default class FullStory extends React.Component {
       window['_fs_org'] = org;
       window['_fs_namespace'] = namespace || 'FS';
 
-      initFullStory();
+      includeFullStory();
     }
   }
 
