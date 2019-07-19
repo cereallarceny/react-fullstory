@@ -50,7 +50,11 @@ export default class FullStory extends React.Component {
 
     getWindowFullStory().shutdown();
 
-    delete getWindowFullStory();
+    delete window[window['_fs_namespace']];
+    delete window['_fs_debug'];
+    delete window['_fs_host'];
+    delete window['_fs_org'];
+    delete window['_fs_namespace'];
   }
 
   render() {

@@ -8,7 +8,6 @@ beforeEach(() => {
   window['_fs_host'] = undefined;
   window['_fs_org'] = undefined;
   window['_fs_namespace'] = undefined;
-  window['FS'] = undefined;
 });
 
 it('should load', () => {
@@ -66,18 +65,22 @@ it('should not update', () => {
   expect(window['_fs_org']).toBe('XXXXX');
 });
 
-// it('cannot unmount if never mounted properly', () => {
-//   const fs = renderer.create(<FullStory />);
+it('cannot unmount if never mounted properly', () => {
+  const fs = renderer.create(<FullStory />);
 
-//   fs.unmount();
+  fs.unmount();
 
-//   expect(window[window['_fs_namespace']]).toBeUndefined();
-// });
+  expect(window[window['_fs_namespace']]).toBeUndefined();
+});
 
-// it('can unmount properly', () => {
-//   const fs = renderer.create(<FullStory org="XXXXX" />);
+it('can unmount properly', () => {
+  const fs = renderer.create(<FullStory org="XXXXX" />);
 
-//   fs.unmount();
+  fs.unmount();
 
-//   expect(window[window['_fs_namespace']]).toBeUndefined();
-// });
+  expect(window[window['_fs_namespace']]).toBeUndefined();
+  expect(window['_fs_debug']).toBeUndefined();
+  expect(window['_fs_host']).toBeUndefined();
+  expect(window['_fs_org']).toBeUndefined();
+  expect(window['_fs_namespace']).toBeUndefined();
+});
