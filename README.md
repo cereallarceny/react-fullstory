@@ -33,6 +33,8 @@ export class App extends Component {
 }
 ```
 
+Other props that you may specify (other than `org`) are: `debug`, `host`, and `namespace`.
+
 This loads FullStory at the creation of the component and places the script appropriately in the page. This library allows for the calling of any function FullStory currently has, or will ever have, in their library.
 
 ```js
@@ -61,9 +63,15 @@ FullStoryAPI('setUserVars', {
 In order to get things running locally, you can use the following commands:
 
 1. `yarn install` - installs all dev dependencies
-2. Create a file named `.env` and place inside it the contents of `.env.sample`. Remember to change the value to your organization's ID!
-3. `yarn storybook` - a storybook preview where you can try out sample commands
-4. _Optional:_ `yarn test:watch` - run this in a separate terminal window to live-reload your test suite on save
+2. `yarn start` - starts the Babel compiler
+
+If you also want to run the examples, you will have to do a little extra work.
+
+1. `cd examples` - Change your terminal into the `examples` folder
+2. Then you'll need to `yarn install` and `yarn start`. This is simply a create-react-app running inside the `examples` folder.
+3. Once you're running CRA, every time you make a change to `src/index.js`, you'll need to kill the CRA server, remove your `examples/node_modules` folder and repeat step 2. This is a minor pain in the ass, but I haven't found a quicker way yet.
+
+I would LOVE to see some PR's on getting local development improved!
 
 ### Building
 

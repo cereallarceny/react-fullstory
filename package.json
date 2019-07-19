@@ -9,17 +9,15 @@
     "dist"
   ],
   "scripts": {
-    "start": "yarn storybook:start",
-    "storybook:start": "start-storybook",
-    "storybook:build": "build-storybook -c .storybook",
+    "start": "rollup -cw",
     "build": "rollup -c",
     "prepare": "yarn build",
     "test": "jest --coverage",
     "test:watch": "jest --watch",
     "version": "auto-changelog -p && git add CHANGELOG.md",
     "release": "np",
-    "predeploy": "yarn storybook:build",
-    "deploy": "gh-pages -d storybook-static && rm -rf storybook-static"
+    "predeploy": "cd examples && yarn build && cd ../",
+    "deploy": "gh-pages -d examples/build"
   },
   "repository": {
     "type": "git",
@@ -55,9 +53,6 @@
     "@babel/core": "^7.4.5",
     "@babel/preset-env": "^7.4.5",
     "@babel/preset-react": "^7.0.0",
-    "@storybook/addon-knobs": "^5.1.9",
-    "@storybook/addon-storyshots": "^5.1.9",
-    "@storybook/react": "^5.1.9",
     "auto-changelog": "^1.13.0",
     "babel-jest": "^24.8.0",
     "babel-loader": "^8.0.6",
