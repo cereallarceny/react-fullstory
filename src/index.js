@@ -25,7 +25,7 @@ export default class FullStory extends React.Component {
   constructor(props) {
     super(props);
 
-    const { org, debug, host, namespace } = props;
+    const { org, debug, host, namespace, runInIframe, isOuterScript } = props;
 
     if (!org || !canUseDOM) {
       return;
@@ -36,6 +36,8 @@ export default class FullStory extends React.Component {
       window['_fs_host'] = host || 'fullstory.com';
       window['_fs_org'] = org;
       window['_fs_namespace'] = namespace || 'FS';
+      window['_fs_run_in_iframe'] = runInIframe || false;
+      window['_fs_is_outer_script'] = isOuterScript || false;
 
       includeFullStory();
     }
@@ -55,6 +57,8 @@ export default class FullStory extends React.Component {
     delete window['_fs_host'];
     delete window['_fs_org'];
     delete window['_fs_namespace'];
+    delete window['_fs_run_in_iframe'];
+    delete window['_fs_is_outer_script'];
   }
 
   render() {
