@@ -6,7 +6,8 @@
   "module": "dist/index.esm.js",
   "browser": "dist/index.js",
   "files": [
-    "dist"
+    "dist",
+    "**/*.{d.ts}"
   ],
   "scripts": {
     "start": "rollup -cw",
@@ -23,6 +24,7 @@
     "type": "git",
     "url": "git+https://github.com/mnsht/react-fullstory.git"
   },
+  "types": "typings/index.d.ts",
   "keywords": [
     "library",
     "microlibrary",
