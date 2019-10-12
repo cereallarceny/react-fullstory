@@ -40,11 +40,7 @@ interface UserVars {
 
 interface FullStoryAPI {
   /**  https://help.fullstory.com/hc/en-us/articles/360020828113-FS-identify-Identifying-users */
-  (
-    method: Identify,
-    userId: string,
-    vars?: { [property: string]: string }
-  ): void;
+  (method: Identify, userId: string, vars?: UserVars): void;
 
   /**  https://help.fullstory.com/hc/en-us/articles/360020623314-FS-shutdown-and-FS-restart */
   (method: Shutdown): void;
