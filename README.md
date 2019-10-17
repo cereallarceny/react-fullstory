@@ -53,6 +53,44 @@ FullStoryAPI('setUserVars', {
 });
 ```
 
+The following aliases have been provided for methods currently available in the FullStory API.
+
+##### identify(userId, vars)
+
+##### shutdown()
+
+##### restart()
+
+##### setUserVars(vars)
+
+##### log(type, message)
+
+##### getCurrentSessionUrl(now)
+
+##### event(eventName, eventProperties)
+
+##### consent(userConsent)
+
+##### clearUserCookie(clearIdentifiedUsersOnly)
+
+You can import these from the library to use
+
+```js
+import { identify, setUserVars } from 'react-fullstory';
+
+// Identify method
+identify(userId, {
+  custom_var_1: 'Hello',
+  custom_var_2: 'World'
+});
+
+// SetUserVars method
+setUserVars({
+  custom_var_3: 'Hello',
+  custom_var_4: 'World'
+});
+```
+
 ## Contributing
 
 1. Fork
