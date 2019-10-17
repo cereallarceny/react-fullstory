@@ -21,6 +21,42 @@ export const FullStoryAPI = (fn, ...args) => {
   return false;
 };
 
+export const identify = (...args) => {
+  return FullStoryAPI('identify', ...args);
+};
+
+export const shutdown = (...args) => {
+  return FullStoryAPI('shutdown', ...args);
+};
+
+export const restart = (...args) => {
+  return FullStoryAPI('restart', ...args);
+};
+
+export const setUserVars = (...args) => {
+  return FullStoryAPI('setUserVars', ...args);
+};
+
+export const log = (...args) => {
+  return FullStoryAPI('log', ...args);
+};
+
+export const getCurrentSessionUrl = (...args) => {
+  return FullStoryAPI('getCurrentSessionUrl', ...args);
+};
+
+export const event = (...args) => {
+  return FullStoryAPI('event', ...args);
+};
+
+export const consent = (...args) => {
+  return FullStoryAPI('consent', ...args);
+};
+
+export const clearUserCookie = (...args) => {
+  return FullStoryAPI('clearUserCookie', ...args);
+};
+
 export default class FullStory extends React.Component {
   constructor(props) {
     super(props);
