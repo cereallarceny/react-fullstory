@@ -35,7 +35,7 @@ interface UserVars {
   /** Activates "Email this user" */
   email?: string;
   /**  Other Simple key/value pairs you'd like to record. */
-  [property: string]: string | boolean | number;
+  [property: string]: string | boolean | number | undefined;
 }
 
 interface FullStoryAPI {
