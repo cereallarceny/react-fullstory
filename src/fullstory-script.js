@@ -15,7 +15,7 @@ export default () =>
     o = n.createElement(t);
     o.async = 1;
     o.crossOrigin = 'anonymous';
-    o.src = 'https://' + _fs_host + '/s/fs.js';
+    o.src = 'https://' + _fs_script + '/s/fs.js';
     y = n.getElementsByTagName(t)[0];
     y.parentNode.insertBefore(o, y);
     g.identify = function(i, v, s) {
@@ -47,4 +47,14 @@ export default () =>
       g(o, v);
     };
     g.clearUserCookie = function() {};
+    g._w = {};
+    y = 'XMLHttpRequest';
+    g._w[y] = m[y];
+    y = 'fetch';
+    g._w[y] = m[y];
+    if (m[y])
+      m[y] = function() {
+        return g._w[y].apply(this, arguments);
+      };
+    g._v = '1.1.1';
   })(window, document, window['_fs_namespace'], 'script', 'user');
