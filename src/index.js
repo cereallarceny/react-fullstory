@@ -14,7 +14,7 @@ const includeFullStory =
 export const getWindowFullStory = () => window[window['_fs_namespace']];
 
 export const FullStoryAPI = (fn, ...args) => {
-  if (canUseDOM && getWindowFullStory()) {
+  if (canUseDOM && getWindowFullStory() && getWindowFullStory()[fn]) {
     return getWindowFullStory()[fn].apply(null, args);
   }
 
@@ -42,7 +42,7 @@ export const log = (...args) => {
 };
 
 export const getCurrentSessionUrl = (...args) => {
-  return FullStoryAPI('getCurrentSessionUrl', ...args);
+  return FullStoryAPI('getCurrentSessionURL', ...args);
 };
 
 export const event = (...args) => {
