@@ -70,7 +70,7 @@ export default class FullStory extends React.Component {
     if (!getWindowFullStory()) {
       window['_fs_debug'] = debug || false;
       window['_fs_host'] = host || 'fullstory.com';
-      window['_fs_script'] = script || 'edge.fullstory.com';
+      window['_fs_script'] = script || 'edge.fullstory.com/s/fs.js';
       window['_fs_org'] = org;
       window['_fs_namespace'] = namespace || 'FS';
 
