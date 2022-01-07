@@ -22,7 +22,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mnsht/react-fullstory.git"
+    "url": "git+https://github.com/cereallarceny/react-fullstory.git"
   },
   "types": "src/index.d.ts",
   "keywords": [
@@ -31,15 +31,13 @@
     "fullstory",
     "react",
     "component",
-    "moonshot",
-    "mnsht"
   ],
   "author": "Moonshot <contact@mns.ht>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/mnsht/react-fullstory/issues"
+    "url": "https://github.com/cereallarceny/react-fullstory/issues"
   },
-  "homepage": "https://mnsht.github.io/react-fullstory/",
+  "homepage": "https://cereallarceny.github.io/react-fullstory/",
   "browserslist": "> 0.25%, not dead",
   "husky": {
     "hooks": {
