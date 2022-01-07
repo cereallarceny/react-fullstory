@@ -26,7 +26,7 @@ export const FullStoryAPIMethods = Object.freeze({
 });
 
 export const FullStoryAPI = (fn, ...args) => {
-  if (canUseDOM && getWindowFullStory()) {
+  if (canUseDOM && getWindowFullStory() && getWindowFullStory()[fn]) {
     return getWindowFullStory()[fn].apply(null, args);
   }
 
