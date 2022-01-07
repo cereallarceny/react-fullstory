@@ -13,6 +13,18 @@ const includeFullStory =
 
 export const getWindowFullStory = () => window[window['_fs_namespace']];
 
+export const FullStoryAPIMethods = Object.freeze({
+  Identify: 'identify',
+  Shutdown: 'shutdown',
+  Restart: 'restart',
+  SetUserVars: 'setUserVars',
+  Log: 'log',
+  Event: 'event',
+  Consent: 'consent',
+  ClearUserCookie: 'clearUserCookie',
+  GetCurrentSessionUrl: 'getCurrentSessionUrl'
+});
+
 export const FullStoryAPI = (fn, ...args) => {
   if (canUseDOM && getWindowFullStory()) {
     return getWindowFullStory()[fn].apply(null, args);
@@ -22,39 +34,39 @@ export const FullStoryAPI = (fn, ...args) => {
 };
 
 export const identify = (...args) => {
-  return FullStoryAPI('identify', ...args);
+  return FullStoryAPI(FullStoryAPIMethods.Identify, ...args);
 };
 
 export const shutdown = (...args) => {
-  return FullStoryAPI('shutdown', ...args);
+  return FullStoryAPI(FullStoryAPIMethods.Shutdown, ...args);
 };
 
 export const restart = (...args) => {
-  return FullStoryAPI('restart', ...args);
+  return FullStoryAPI(FullStoryAPIMethods.Restart, ...args);
 };
 
 export const setUserVars = (...args) => {
-  return FullStoryAPI('setUserVars', ...args);
+  return FullStoryAPI(FullStoryAPIMethods.SetUserVars, ...args);
 };
 
 export const log = (...args) => {
-  return FullStoryAPI('log', ...args);
+  return FullStoryAPI(FullStoryAPIMethods.Log, ...args);
 };
 
 export const getCurrentSessionUrl = (...args) => {
-  return FullStoryAPI('getCurrentSessionUrl', ...args);
+  return FullStoryAPI(FullStoryAPIMethods.GetCurrentSessionUrl, ...args);
 };
 
 export const event = (...args) => {
-  return FullStoryAPI('event', ...args);
+  return FullStoryAPI(FullStoryAPIMethods.Event, ...args);
 };
 
 export const consent = (...args) => {
-  return FullStoryAPI('consent', ...args);
+  return FullStoryAPI(FullStoryAPIMethods.Consent, ...args);
 };
 
 export const clearUserCookie = (...args) => {
-  return FullStoryAPI('clearUserCookie', ...args);
+  return FullStoryAPI(FullStoryAPIMethods.ClearUserCookie, ...args);
 };
 
 export default class FullStory extends React.Component {
