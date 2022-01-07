@@ -1,8 +1,8 @@
 # React Fullstory
 
-![Travis (.org)](https://img.shields.io/travis/mnsht/react-fullstory.svg?color=green)
+![Travis (.org)](https://img.shields.io/travis/cereallarceny/react-fullstory.svg?color=green)
 ![npm](https://img.shields.io/npm/v/react-fullstory.svg?color=green)
-![GitHub](https://img.shields.io/github/license/mnsht/react-fullstory.svg?color=green)
+![GitHub](https://img.shields.io/github/license/cereallarceny/react-fullstory.svg?color=green)
 
 A component to run FullStory in your React application. This is safe to use both on the client and in a server-rendered environment. If you run into issues, please submit an issue. Pull requests are also welcome!
 
