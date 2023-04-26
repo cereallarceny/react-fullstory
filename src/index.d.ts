@@ -110,6 +110,8 @@ interface FullStoryProps {
   debug?: boolean;
   /** FullStory host. Default fullstory.com */
   host?: string;
+  /** FullStory script. Default edge.fullstory.com */
+  script?: string;
   /** FullStory namespace */
   namespace?: string;
 }
